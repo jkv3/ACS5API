@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>ACS5API example</title>
+
+  <script type="text/javascript" language="javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script>
+
+  <script type="text/javascript" language="javascript" src="ACS5API.js"></script>
+  <link rel="stylesheet" type="text/css" href="ACS5API.css">
+
+  <!-- get your key through http://www.census.gov/developers/ -->
+  <script>ACS5init("Your key",{year:2010, geo:"for=county:109&in=state:36"});</script>
+
+  </head>
+<body>
+<table id="demo_table" border="1">
+
+  <tbody>
+    <tr>
+      <th>Definition</th>
+      <th>Rendered</th>
+    </tr>
+    <tr>
+      <td><strong>acs5APIget with data-cell</strong></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td><code>&lt;td class="acs5APIget" data-cell="B01002_001"
+data-display="est" id="ex1"&gt;</code></td>
+      <td class="acs5APIget" data-cell="B01002_001" data-display="est" id="ex1"></td>
+    </tr>
+    <tr>
+      <td><code>&lt;td class="acs5APIget" data-cell="B01002_002"
+data-display="both" id="ex2"&gt;</code></td>
+      <td class="acs5APIget" data-cell="B01002_002" data-display="both" id="ex2"></td>
+    </tr>
+    <tr>
+      <td><code>&lt;td class="acs5APIget" data-cell="B01002_003"&gt;</code></td>
+      <td class="acs5APIget" data-cell="B01002_003"></td>
+    </tr>
+    <tr>
+      <td><code>&lt;td class="acs5APIget" data-cell="B01003_001"
+data-display="both" id="county"&gt;</code></td>
+      <td class="acs5APIget" data-cell="B01003_001" data-display="both" id="county"></td>
+    </tr>
+     <tr>
+    <tr>
+      <td><strong>acs5APIget with data-var</strong></td>
+      <td></td>
+    </tr>
+      <td><code>&lt;td class="acs5APIget" data-var="TotPop" data-geo="for=state:36"
+data-display="both" id="state"&gt;</code></td>
+      <td class="acs5APIget" data-var="TotPop" data-display="both" data-geo="for=state:36" id="state"></td>
+    </tr>
+    <tr>
+      <td><strong>Ill defined</strong></td>
+      <td></td>
+    </tr>
+     <tr>
+      <td><code>&lt;td class="acs5APIget" data-cell="B01003_001" data-geo="for=badgeo"
+data-display="both" id="badgeo"&gt;</code></td>
+      <td class="acs5APIget" data-cell="B01003_001" data-display="both" data-geo="for=badgeo" id="badgeo"></td>
+    </tr>
+    <tr>
+      <td><code>&lt;td class="acs5APIget" data-cell="badrequest"
+data-display="both"&gt;</code></td>
+      <td class="acs5APIget" data-cell="badrequest" data-display="both" id="err"></td>
+    </tr>
+   <tr>
+      <td><strong>acs5APIcalc</strong></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td><code>&lt;td class="acs5APIcalc" data-operator="copy" data-operands="ex1"
+data-display="moe"&gt;</code></td>
+      <td class="acs5APIcalc" data-operator="copy" data-operands="ex1" data-display="moe"></td>
+    </tr>
+    <tr>
+      <td><code>&lt;td class="acs5APIcalc" data-operator="sum" data-operands="ex1,ex2"
+data-display="moe"&gt;</code></td>
+      <td class="acs5APIcalc" data-operator="sum" data-operands="ex1,ex2" data-display="both"></td>
+    </tr>
+   <tr>
+      <td><code>&lt;td class="acs5APIcalc" data-operator="proportion" data-operands="county,state"
+data-display="moe"&gt;</code></td>
+      <td class="acs5APIcalc" data-operator="proportion" data-operands="county,state" data-display="both"></td>
+    </tr>
+  </tbody>
+</table>
+
+</body>
+</html>
